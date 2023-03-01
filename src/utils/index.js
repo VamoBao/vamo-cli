@@ -21,6 +21,11 @@ export const createDir = (path) => {
   })
 }
 
+/**
+ * 递归复制文件到指定目录
+ * @param {string} src 源文件路径
+ * @param {string} dest 目标路径
+ */
 export function copyRecursion(src, dest) {
   const files = fs.readdirSync(src, { withFileTypes: true });
   files.forEach((file) => {

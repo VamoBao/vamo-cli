@@ -49,13 +49,17 @@ const initProject = () => {
         }
       ])
       if (webAnswer.webType) {
+        // 创建文件夹
         createDir(dirPath)
         const spinner = ora({
           text: '开始创建文件，请稍等...'
         }).start()
+        // 递归复制选择的项目内容到新建的目录
         copyRecursion(path.join(TEMPLATE_PATH, 'react'), dirPath)
         spinner.succeed('完成')
+        // 执行npm i安装依赖
         spawnSync('npm', ['i'], { cwd: dirPath, stdio: 'inherit' })
+        // 启动项目
         spawnSync('npm', ['start'], { cwd: dirPath, stdio: 'inherit' })
       }
     } else if (projectType === 'h5') {
