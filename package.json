@@ -1,0 +1,31 @@
+{
+  "name": "vamo-cli",
+  "version": "1.0.0",
+  "description": "a frontend cli",
+  "type": "module",
+  "exports": "./src/index.js",
+  "bin": {
+    "v-c": "src/index.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Vamo",
+  "license": "ISC",
+  "dependencies": {
+    "cli-spinner": "^0.2.10",
+    "commander": "^10.0.0",
+    "inquirer": "^9.1.4",
+    "log-symbols": "^5.1.0",
+    "ora": "^6.1.2"
+  },
+  "devDependencies": {
+    "esbuild": "^0.17.10",
+    "esbuild-register": "^3.4.2",
+    "eslint": "^8.35.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.27.5",
+    "eslint-plugin-n": "^15.6.1",
+    "eslint-plugin-promise": "^6.1.1"
+  }
+}
