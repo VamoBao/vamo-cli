@@ -15,6 +15,7 @@
   "dependencies": {
     "cli-spinner": "^0.2.10",
     "commander": "^10.0.0",
+    "ejs": "^3.1.8",
     "inquirer": "^9.1.4",
     "log-symbols": "^5.1.0",
     "ora": "^6.1.2"

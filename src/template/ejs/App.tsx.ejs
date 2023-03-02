@@ -1,0 +1,114 @@
+import React, { type FC } from 'react'
+import styles from './App.module.less'
+import { Layout, type MenuProps, Row, Col, Avatar, Space, Dropdown, Button } from 'antd'
+import { <%_ if(layout !== 'none'){ -%>
+  HomeOutlined, SettingOutlined, 
+  <%_ } -%>
+  DownOutlined } from '@ant-design/icons'
+import classNames from 'classnames'
+import { Outlet } from 'react-router-dom'
+<%_ if(layout !== 'none'){ -%>
+import SiderMenu from 'components/sider-menu'
+<%_ } -%>
+
+<%_ if(layout === 'left-right') { -%>
+const { Sider, Header, Content, Footer } = Layout
+<%_ }else{ -%>
+const {  Header, Content, Footer } = Layout
+<%_ } -%>
+
+const App: FC = () => {
+  <%_ if(layout !== 'none'){ -%>
+  /** 目录项配置 */
+  const items: MenuProps['items'] = [
+    {
+      icon: <HomeOutlined />,
+      key: 'home',
+      label: '首页',
+      children: [{
+        key: 'data',
+        label: '数据'
+      }, {
+        key: 'list',
+        label: '列表'
+      }]
+    }, {
+      icon: <SettingOutlined />,
+      key: 'setting',
+      label: '系统设置'
+    }
+  ]
+  <%_ } -%>
+  /** 用户名溢出菜单项 */
+  const dropDownItems: MenuProps['items'] = [
+    {
+      key: 'help',
+      label: '帮助文档'
+    },
+    {
+      key: 'logout',
+      danger: true,
+      label: '注销'
+    }
+  ]
+
+  return (
+    <div className={classNames(styles.app, 'whole-height')}>
+      <%_ if(layout === 'left-right') { -%>
+      <Layout className='whole-height'>
+        {/* 侧边目录 */}
+        <Sider
+          className='pdt-60'
+          collapsible
+          breakpoint='lg'
+        >
+          <SiderMenu
+            items={items}
+            defaultOpenKeys={['home']}
+            defaultSelectedKeys={['data']}
+          />
+        </Sider>
+        <%_ } -%>
+        <Layout className='whole-height'>
+          {/* 顶部条 */}
+          <Header>
+            <Row className='whole-height' align='middle' justify='end'>
+              <%_ if(layout === 'top') { -%>
+                <Col flex={1}>
+                  <SiderMenu
+                    items={items}
+                    defaultOpenKeys={['home']}
+                    defaultSelectedKeys={['data']}
+                    mode='horizontal'
+                    theme='light'
+                  />
+                </Col>
+              <%_ } -%>
+              <Col>
+                <Space >
+                  {/* 用户头像 */}
+                  <Avatar size={32} className={styles.user}>User</Avatar>
+                  {/* 用户名溢出菜单 */}
+                  <Dropdown menu={{ items: dropDownItems }}>
+                    <Space>
+                      <Button type='link' size='small'>用户名<DownOutlined /></Button>
+                    </Space>
+                  </Dropdown>
+                </Space>
+              </Col>
+            </Row>
+          </Header>
+          {/* 主内容区域 */}
+          <Content className='pd-16'>
+            <Outlet />
+          </Content>
+          <Footer />
+        </Layout>
+      <%_ if(layout === 'left-right') { -%>
+      </Layout>
+      <%_ } -%>
+    </div>
+  )
+}
+
+export default App
