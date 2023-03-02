@@ -1,6 +1,5 @@
 const CracoLessPlugin = require('craco-less')
 const { CracoAliasPlugin } = require('react-app-alias')
-const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer')
 const WebpackBar = require('webpackbar')
 
 module.exports = {
@@ -23,10 +22,6 @@ module.exports = {
   ],
   webpack: {
     plugins: [
-      new BundleAnalyzerPlugin({
-        analyzerPort: 8888,
-        openAnalyzer: false
-      }),
       new WebpackBar()
     ],
     configure: (webpackConfig) => {
