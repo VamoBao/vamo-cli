@@ -73,16 +73,26 @@ const initProject = () => {
           text: '开始创建文件，请稍等...'
         }).start()
         // 递归复制选择的项目内容到新建的目录
-        copyRecursion(path.join(TEMPLATE_PATH, 'react'), dirPath)
-        /** 创建ejs处理列表 */
-        const renderArr = new Map([
+        copyRecursion(path.join(TEMPLATE_PATH, config.framework), dirPath)
+        /** react项目ejs处理列表 */
+        const reactRenderArr = new Map([
           [path.join(EJS_PATH, 'package.json.ejs'), path.join(dirPath, 'package.json')],
           [path.join(EJS_PATH, 'App.tsx.ejs'), path.join(dirPath, 'src/App.tsx')]
         ])
-        console.log(config)
-        Array.from(renderArr.keys()).forEach(src => {
-          renderEjs(src, renderArr.get(src), config)
+        /** vue项目ejs处理列表 */
+        const vueRenderArr = new Map([
+          [path.join(EJS_PATH, 'package.json.ejs'), path.join(dirPath, 'package.json')],
+        ])
+        /** ejs列表对象 */
+        const ejsRender = {
+          react: reactRenderArr,
+          vue: vueRenderArr
+        }
+        /** 开始处理ejs */
+        Array.from(ejsRender[config.framework].keys()).forEach(src => {
+          renderEjs(src, ejsRender[config.framework].get(src), config)
         })
+        /** 所有操作完成提示 */
         spinner.succeed('完成')
         // 执行npm i安装依赖
         // spawnSync('npm', ['i'], { cwd: dirPath, stdio: 'inherit' })
