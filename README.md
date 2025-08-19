@@ -4,9 +4,6 @@
   <a href="#" target="_blank">
     <img alt="License: ISC" src="https://img.shields.io/badge/License-ISC-yellow.svg" />
   </a>
-  <a href="https://twitter.com/Malanore93" target="_blank">
-    <img alt="Twitter: Malanore93" src="https://img.shields.io/twitter/follow/Malanore93.svg?style=social" />
-  </a>
 </p>
 
 > a frontend cli, provide template for react and vue
@@ -27,12 +24,7 @@ vcli
 
 👤 **VamoBao**
 
-* Twitter: [@Malanore93](https://twitter.com/Malanore93)
 * Github: [@VamoBao](https://github.com/VamoBao)
-
-## 🤝 Contributing
-
-Contributions, issues and feature requests are welcome!<br />Feel free to check [issues page](https://github.com/VamoBao/vamo-cli/issues).
 
 ## Show your support
 

@@ -1,11 +1,16 @@
 {
-  "name": "v-cli",
+  "name": "vamo-cli",
   "version": "1.0.0",
   "description": "a frontend cli, provide template for react and vue",
   "main": "dist/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "tsc",
+    "prepare": "npm run build"
   },
+  "files": [
+    "dist",
+    "templates"
+  ],
   "bin": {
     "vcli": "dist/index.js"
   },
