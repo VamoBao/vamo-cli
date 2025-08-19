@@ -1,32 +1,40 @@
 {
   "name": "vamo-cli",
   "version": "1.0.0",
-  "description": "a frontend cli",
-  "type": "module",
-  "exports": "./src/index.js",
-  "bin": {
-    "v-c": "src/index.js"
-  },
+  "description": "a frontend cli, provide template for react and vue",
+  "main": "dist/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "tsc",
+    "prepare": "npm run build"
   },
-  "author": "Vamo",
+  "files": [
+    "dist",
+    "templates"
+  ],
+  "bin": {
+    "vcli": "dist/index.js"
+  },
+  "keywords": [
+    "cli",
+    "frontend",
+    "template"
+  ],
+  "author": "VamoBao",
   "license": "ISC",
-  "dependencies": {
-    "cli-spinner": "^0.2.10",
-    "commander": "^10.0.0",
-    "ejs": "^3.1.8",
-    "inquirer": "^9.1.4",
-    "log-symbols": "^5.1.0",
-    "ora": "^6.1.2"
-  },
   "devDependencies": {
-    "esbuild": "^0.17.10",
-    "esbuild-register": "^3.4.2",
-    "eslint": "^8.35.0",
-    "eslint-config-airbnb-base": "^15.0.0",
-    "eslint-plugin-import": "^2.27.5",
-    "eslint-plugin-n": "^15.6.1",
-    "eslint-plugin-promise": "^6.1.1"
+    "@eslint/js": "^9.33.0",
+    "@types/fs-extra": "^11.0.4",
+    "@types/inquirer": "^9.0.9",
+    "@types/node": "^24.3.0",
+    "eslint": "^9.33.0",
+    "globals": "^16.3.0",
+    "jiti": "^2.5.1",
+    "typescript": "^5.9.2",
+    "typescript-eslint": "^8.40.0"
+  },
+  "dependencies": {
+    "commander": "^14.0.0",
+    "fs-extra": "^11.3.1",
+    "inquirer": "^12.9.3"
   }
 }

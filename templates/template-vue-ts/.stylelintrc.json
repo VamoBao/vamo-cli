@@ -1,0 +1,76 @@
+{
+  "extends": [
+    "stylelint-config-standard",
+    "stylelint-config-standard-vue"
+  ],
+  "plugins": [
+    "stylelint-less",
+    "stylelint-order"
+  ],
+  "overrides": [
+    {
+      "files": [
+        "**/*.{less,vue}"
+      ],
+      "customSyntax": "postcss-less"
+    },
+    {
+      "files": [
+        "**/*.{html,vue}"
+      ],
+      "customSyntax": "postcss-html"
+    }
+  ],
+  "rules": {
+    "order/properties-order": [
+      "display",
+      "position",
+      "top",
+      "right",
+      "bottom",
+      "left",
+      "z-index",
+      "flex",
+      "flex-grow",
+      "flex-shrink",
+      "flex-basis",
+      "justify-content",
+      "align-items",
+      "align-content",
+      "order",
+      "float",
+      "clear",
+      "width",
+      "min-width",
+      "max-width",
+      "height",
+      "min-height",
+      "max-height",
+      "margin",
+      "margin-top",
+      "margin-right",
+      "margin-bottom",
+      "margin-left",
+      "padding",
+      "padding-top",
+      "padding-right",
+      "padding-bottom",
+      "padding-left",
+      "font",
+      "font-size",
+      "font-weight",
+      "line-height",
+      "color",
+      "text-align",
+      "text-decoration",
+      "white-space",
+      "background",
+      "background-color",
+      "border",
+      "border-radius",
+      "box-shadow",
+      "opacity",
+      "transition"
+    ]
+  }
+}

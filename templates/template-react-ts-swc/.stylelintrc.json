@@ -1,0 +1,19 @@
+{
+  "extends": [
+    "stylelint-config-standard",
+    "stylelint-config-css-modules",
+    "stylelint-config-recess-order"
+  ],
+  "plugins": [
+    "stylelint-less"
+  ],
+  "overrides": [
+    {
+      "files": [
+        "**/*.less"
+      ],
+      "customSyntax": "postcss-less"
+    }
+  ],
+  "rules": {}
+}
