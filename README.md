@@ -6,12 +6,12 @@
   </a>
 </p>
 
-> a frontend cli, provide template for react and vue
+> A frontend cli, provide template for react and vue
 
 ## Install
 
 ```sh
-npm install
+npm install vamo-cli
 ```
 
 ## Usage
@@ -19,6 +19,16 @@ npm install
 ```sh
 vcli
 ```
+
+or
+
+```sh
+npx vamo-cli
+```
+
+## Notice
+
+* All the templates need **node >= 20.19** cause use the latest vite package
 
 ## Author
 
